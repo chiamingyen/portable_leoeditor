@@ -1,0 +1,393 @@
+.. @+leo-ver=5-thin
+.. @+node:ekr.20100805165051.7152: * @file installing.txt
+.. @@language rest
+.. @@tabwidth -4
+
+.. @+at @rst-options
+..  call_docutils=False
+..  code_mode=False
+..  generate_rst=True
+..  http_server_support = False
+..  show_organizer_nodes=True
+..  show_headlines=True
+..  show_leo_directives=True
+..  stylesheet_path=..\doc
+..  write_intermediate_file = True
+..  verbose=True
+.. @@c
+
+.. @+all
+.. @+node:ekr.20100731112744.7268: ** @rst html\installing.html
+################
+Installing Leo
+################
+
+.. _`Leo's help forum`: http://groups.google.com/group/leo-editor
+
+.. index:: Installing Leo
+
+This chapter tells how to install and run Leo on Windows or Linux.
+Leo can be installed on MacOS, but the process is difficult and not recommended.
+
+**Important**: If you have *any* problems installing Leo,
+please ask for help on `Leo's help forum`_.
+
+.. contents::
+    :depth: 3
+
+.. @+node:ekr.20100731112744.7269: *3* @rst-no-head links
+.. Links used in this document...
+
+.. _`run Leo`:              `Running Leo`_
+.. _`Leo's download page`:  http://sourceforge.net/project/showfiles.php?group_id=3458&package_id=29106
+.. _`Pmw`:                  http://pmw.sourceforge.net/
+.. _`PyEnchant`:            https://sourceforge.net/projects/pyenchant/
+.. _`Python`:               http://www.python.org
+.. @+node:ekr.20101125062332.5090: *3* Required and optional packages
+Leo requires `Python`_. Leo will work on any platform that supports Python 2.6 or
+above, including Python 3.0 and above. 
+
+Leo also requires either the Qt widget set.
+
+To enable spell checking, you must install the `PyEnchant`_ package.
+
+The following sections describe how to install Python, Qt and PyEnchant.
+.. @+node:ekr.20100817101952.4313: *3* Installing other packages
+.. @+node:ekr.20100731112744.7270: *4* Installing Python
+.. _`this page`: http://python.org
+
+To install Python, see `this page`_.
+.. @+node:ekr.20100731112744.7271: *4* Installing Qt
+To install Qt, get the binary package of PyQt from: 
+http://www.riverbankcomputing.co.uk/software/pyqt/download
+
+The version of PyQt that you download must match your installed Python version.
+Remember that Leo requires Python 2.6 or later, or Python 3.0 or later. Now run
+the binary PyQt installer.
+.. @+node:ekr.20100731112744.7281: *4* Installing PyEnchant
+You must install the PyEnchant package if you want to use Leo's Spell tab.
+Download and install the PyEnchant package from
+http://www.rfk.id.au/software/pyenchant/download.html There is an executable
+installer for Windows users.
+.. @+node:ekr.20100817101952.4303: *3* Installing Leo itself
+.. links
+
+.. _`latest stable release`: http://sourceforge.net/projects/leo/files/Leo/4.10%20final/
+.. _`SourceForge`: https://sourceforge.net
+.. _`Leo's snapshots page`:     http://www.greygreen.org/leo/
+.. _`nightly snapshot`:             http://www.greygreen.org/leo/
+.. _`Leo's latest sources`: https://code.launchpad.net/leo-editor/
+.. _`Launchpad`: https://code.launchpad.net/
+.. _`bzr`: http://bazaar.canonical.com/
+
+Leo's core code is always being improved and developed. Unit-testing
+ensures that the daily commits are as bug-free as possible. Almost all of
+the time, downloading the most recent `nightly snapshot`_ of the
+development code is going to give you code that is just as stable and much
+more up-to-date than the most recent `latest stable release`_ which most
+Leonistas would consider already outdated.
+
+If you are just checking Leo out, feel free to use the `latest stable release`_
+download if it makes you feel more secure, but once you've
+decided to work with Leo on a regular basis, we highly recommend regularly
+keeping your installation up to date with the most recent `nightly snapshot`_.
+
+To summarize, you may get Leo in three ways:
+
+1. Download the `latest stable release`_ from `SourceForge`_. This release
+   contains an executable installer. This release will usually be a bit out
+   of date.
+
+2. Download a `nightly snapshot`_ from `Leo's snapshots page`_. This page
+   contains .zip archives of Leo's code from 1, 2, 5, 10, 30 and 90 days
+   ago.
+   
+3. Download `Leo's latest sources`_ from `Launchpad`_ using `bzr`_.
+   Installing bzr is non-trivial, but once set up this is the easiest way
+   to get the latest version of Leo's code.
+.. @+node:ekr.20100731112744.7276: *4* Installing Leo on Windows
+1. Install Python from http://www.python.org/download/releases/
+
+2. Install Qt, as described above.
+
+3. Download and install Leo.
+   Download the latest version of Leo (a .zip file) from `Leo's download page`_.
+   You can unpack the .zip file anywhere, including Python's *site-packages* folder,
+   for example, C:\\Python26\\Lib\\site-packages
+.. @+node:ekr.20100731112744.7274: *4* Installing Leo on Linux
+If you are using Debian/Ubuntu, find and install the debian package. This
+provides the best integration with your desktop (file associations, icons, launcher
+item). Failing that, follow the instructions below.
+
+Download the latest version of Leo (a .zip file) from `Leo's download page`_.
+
+Unzip the downloaded .zip file into the **unpacked folder** in your home directory.
+The unpacked folder will be called something like leo-4-5.
+
+You now have two choices:
+
+1. You can run Leo from your home directory.
+   Just add  ~/leo-4-5 to your path.
+
+2. You can install leo into /usr/local/lib and /usr/local/bin by running Leo's install script as follows::
+
+    cd ~/leo-4-4-3-final
+    chmod u+x install
+    sudo ./install
+
+The install script will instruct you to add /usr/local/bin to your path.
+You can, instead, add the following link::
+
+    sudo ln -s /usr/local/lib/leo/ /usr/local/lib/python2.6/site-packages/
+
+Now you are ready to `run Leo`_.
+.. @+node:ekr.20100731112744.7275: *4* @rst-ignore Installing Leo on MacOS X
+**Important**: Installing Leo on MacOS is difficult and not recommended.
+Furthermore, Leo does not work as well on MacOS as on other platforms.
+
+Here is how to install Leo on MacOS 10.5 (Leopard):
+
+1. MacOS 10.5 comes with Python pre-installed.
+
+   See http://www.python.org/download/mac/ and
+   http://wiki.python.org/moin/MacPython/Leopard
+   for information about using the latest version of Python.
+
+2. Download and install bzr:
+
+   - Download bzr from http://bazaar-vcs.org/Download
+
+   - Install bzr using the file just downloaded.
+
+3. Get Leo's sources from Leo's trunk::
+
+    cd ~
+    mkdir leo.repo
+    cd leo.repo
+    bzr init
+    bzr branch lp:leo-editor
+    cd leo-editor
+
+4. If you already have Qt and PyQt installed, you can run the qt version of Leo as follows::
+
+    python launchLeo.py --gui=qt
+
+5. If you don't have Qt or PyQt installed, you will have to install Qt and PyQt
+    from sources. There does not seem to be any pre-built binaries.
+
+    A: You may need to install XCode from http://developer.apple.com/mac/
+       in order to get a development environment.
+
+    B: Download and install the sip package, following the direction at
+       http://www.riverbankcomputing.co.uk/software/sip/download
+
+    C: Download the OpenSource Qt libraries for Mac from
+       http://www.qtsoftware.com/downloads
+
+    D: At various points along the way you will need to build the sources::
+
+         python configure.py 
+         make
+         sudo make install
+.. @+node:ekr.20120229094652.15098: *4* Installing Leo on MacOs 10.7 Lion
+.. .. http://groups.google.com/group/leo-editor/browse_thread/thread/92ae059cc5213ad3
+
+**Important**: Installing Leo on MacOS is, ah, challenging.
+Furthermore, Leo does not work as well on MacOS as on other platforms.
+
+Many thanks to Ludwig Schwardt for the following
+installation instructions.
+
+I recently received a new MacBook Pro and did a fresh upgrade to Mac OS
+10.7 (Lion). I then used the opportunity to test out installation
+procedures of various software on a clean system. My main finding is that
+the excellent Homebrew (mxcl.github.com/homebrew/) makes things much easier
+these days.
+
+Why Homebrew? It does not try to replace every single bit of functionality
+on your Mac with their own version, like Macports or fink. It reuses the
+existing libraries as far as possible. No need to reinstall Python, for
+example (one of my pet gripes when people try to install new software on
+their Macs, and the source of much confusion and pain). It installs to
+/usr/local, the standard place to find third-party libraries and headers,
+instead of the obscure /opt or /sw. It's simple to use and to extend.
+
+I last installed Leo on Mac OS 10.4 (Tiger) back in the Tk days, and
+wondered what it looked like in Qt. All the horror stories of PyQT on Mac
+discouraged me from trying this before, so I was keen to see if Homebrew
+helps. Here is my installation write-up:
+
+- Make sure you have Xcode installed (test it by confirming that "gcc" runs
+  in the Terminal)
+
+- In preparation for homebrew, the best option in my opinion is to delete
+  /usr/local via::
+
+    sudo rm -rf /usr/local
+
+  and install any software in it via homebrew instead. If this step fills
+  you with dread and you do not want to lose your beloved third-party
+  software, the second-best option is to make sure you have write
+  permission for the directory via::
+
+    sudo chown -R <your user name>:admin /usr/local
+
+  If you don't know your username, run "whoami". :-) This is useful because
+  homebrew actually discourages you from installing third-party software as
+  the superuser (the usual Mac apps in /Applications are also installed as
+  the normal user, for that matter).
+
+- Install Homebrew (http://mxcl.github.com/homebrew/) by running the
+  following command in the Terminal::
+
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+
+- Run "brew update" to get the latest formulas
+
+- Now install PyQT (yes, that's it!)::
+
+     brew install pyqt
+
+- Run "brew doctor" and check any further suggestions to improve your system.
+
+- Add the following lines to your ~/.bash_profile (or ~/.profile on Leopard)::
+
+      export PATH=/usr/local/bin:$PATH
+      # This is for SIP (and PyQT) as suggested by Homebrew
+      export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+
+- Open a new Terminal tab / window so that the above settings take effect,
+  and install Leo. I downloaded the Leo-4.9-final-a.zip, unzipped it, and
+  ran "python launchLeo.py" inside the Leo directory.
+
+We should consider adding a Homebrew formula for Leo. This will simplify
+the process even further, to simply "brew install leo". I started on this,
+but wasn't sure where to put the various Leo files in the system hierarchy.
+The Debian package can give some clues here, but I haven't looked at it
+yet.
+.. @+node:ekr.20100817101952.4306: *4* Installing Leo with bzr
+Many users will want to track the development version of Leo, in order to stay
+on top of the latest features and bug fixes. Running the development version is
+quite safe and easy, and it's also a requirement if you want to contribute to
+Leo.
+
+1. First, you need to get Bazaar (bzr) from http://bazaar-vcs.org. For windows
+   users we recommend the standalone installer - the python installer may have
+   problems pushing to Launchpad. Plain bzr installer only contains the command
+   line version, so you might want to augment that with a friendly GUI - qbzr is
+   recommended as it's the easiest one to install. It provides command like
+   bzr qlog, bzr qannotate etc.
+
+2. Get Leo from launchpad by doing::
+
+     bzr branch lp:leo-editor
+
+And that's it! You can run leo/core/leo.py directly. When you want to refresh the
+code with latest modifications from Launchpad, run bzr pull.
+
+If you make modifications to Leo (with the interest in sharing them with the Leo
+community), you can check them in to your local branch by doing bzr checkin.
+Now, to actually request your changes to be merged to Leo trunk, you need a
+Launchpad account with RSA keys in place. There is showmedo video about how to
+accomplish this in Windows using puttygen and pageant at
+http://showmedo.com/videos/video?name=1510070&fromSeriesID=151.
+
+After your Launchpad account is set up, go to
+https://launchpad.net/leo-editor, choose "Code" tab -> Register Branch,
+select Branch type "Hosted" and fill in descriptive details about the branch.
+After that, go to the branch home page from Code tab again, and copy-paste the
+push command line to terminal. For example, for branch::
+
+    https://code.launchpad.net/~leo-editor-team/leo-editor/mod_rclick
+
+The push command is::
+
+    bzr push bzr+ssh://my_name@bazaar.launchpad.net/~leo-editor-team/leo-editor/mod_rclick    
+
+You may wish to add --remember command line option to bzr push, to direct all
+future pushes to that location. Then, you only need to execute bzr push.
+
+After your branch is pushed, you can email the Leo mailing list and request it
+to be reviewed and merged to trunk.
+.. @+node:ekr.20100731112744.7277: *3* Running Leo
+You can run Leo from a Python interpreter as follows::
+
+    import leo
+    leo.run() # runs Leo, opening a new outline or,
+    leo.run(fileName=aFileName) # runs Leo, opening the given file name.
+
+Another way to run Leo is as follows::
+
+    cd <path-to-launchLeo.py>
+    python launchLeo.py %*
+
+Here are some tips that may make running Leo easier:
+
+**Linux**
+    The following shell script will allow you to open foo.leo files by typing leo foo::
+
+        #!/bin/sh 
+        python <leopath>launchLeo.py $1
+
+    where <leopath> is the path to the directory containing the leo directory. 
+
+**Windows**
+    You can associate Leo with .leo files using a batch file. Put the
+    following .bat file in c:\\Windows::
+
+        <path-to-python>/python <path-to-leo>/launchLeo.py %*
+
+    Here <path-to-leo> is the path to the directory *containing* the leo directory,
+    that is, the directory containing launchLeo.py.
+.. @+node:ekr.20101126080134.5085: *4* Running Leo the first time
+The first time you start Leo, a dialog will ask you for a unique identifier. If
+you are using a source code control system such as bzr, use your bzr login name.
+Otherwise your initials will do.
+
+Leo stores this identifier in the file .leoID.txt. Leo attempts to create
+leoID.txt in the .leo sub-directory of your home directory, then in Leo's config
+directory, and finally in Leo's core directory. You can change this identifier
+at any time by editing .leoID.txt.
+.. @+node:ekr.20100731112744.7279: *4* Running Leo in batch mode
+On startup, Leo looks for two arguments of the form::
+
+    --script scriptFile
+
+If found, Leo enters batch mode. In batch mode Leo does not show any windows.
+Leo assumes the scriptFile contains a Python script and executes the contents of
+that file using Leo's Execute Script command. By default, Leo sends all
+output to the console window. Scripts in the scriptFile may disable or enable
+this output by calling app.log.disable or app.log.enable
+
+Scripts in the scriptFile may execute any of Leo's commands except the Edit Body
+and Edit Headline commands. Those commands require interaction with the user.
+For example, the following batch script reads a Leo file and prints all the
+headlines in that file::
+
+    path = r"<path-to-folder-containing-the-leo-folder>\\leo\\test\\test.leo"
+
+    g.app.log.disable() # disable reading messages while opening the file
+    flag,newFrame = g.openWithFileName(path,None)
+    g.app.log.enable() # re-enable the log.
+
+    for p in newFrame.c.all_positions():
+        g.es(g.toEncodedString(p.h,"utf-8"))
+.. @+node:ekr.20100731112744.7278: *4* Running Leo from a console window
+Leo sends more detailed error messages to stderr,
+the output stream that goes to the console window. In Linux and MacOS
+environments, python programs normally execute with the console window visible.
+On Windows, can run Leo with the console window visible by associating .leo
+files with python.exe *not* pythonw.exe. 
+
+.. For full instructions about how
+.. to do this, see `Associating Leo with .leo Files`_.
+.. @+node:ekr.20100731112744.7273: *4* The .leo directory
+Python's HOME environment variable specifies Leo's HOME directory.
+See http://docs.python.org/lib/os-procinfo.html for details.
+
+Leo uses os.expanduser('~') to determine the HOME directory if no HOME environment variable exists.
+
+Leo puts several files in your HOME/.leo directory:
+.leoID.txt, .leoRecentFiles.txt, and myLeoSettings.leo.
+.. @-all
+.. @-leo
